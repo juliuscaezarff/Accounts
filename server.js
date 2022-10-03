@@ -13,7 +13,7 @@ function operation() {
         name: 'action',
         message: 'O que você deseja fazer?',
         choices: [
-          'Criar conta',
+          'Criar Conta',
           'Consultar Saldo',
           'Depositar',
           'Sacar',
@@ -24,7 +24,9 @@ function operation() {
     .then(answer => {
       const action = answer['action']
 
-      console.log(action)
+      if (action === 'Criar Conta') {
+        createAccount()
+      }
     })
     .catch(err => console.log(err))
 }
@@ -34,4 +36,22 @@ function operation() {
 function createAccount() {
   console.log(chalk.bgGreen.black('Obrigado por escolher o nosso banco!'))
   console.log(chalk.green('Defina as opções da sua conta a seguir:'))
+
+  buildAccount()
+}
+
+function buildAccount() {
+  inquirer
+    .prompt([
+      {
+        name: 'accountName',
+        message: 'Digite um nome para sua conta:'
+      }
+    ])
+    .then(answer => {
+      const accountName = answer['accountName']
+
+      console.log(accountName)
+    })
+    .catch(err => console.error(err))
 }
