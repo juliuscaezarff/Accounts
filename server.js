@@ -30,3 +30,8 @@ function operation() {
 }
 
 // create account
+
+function createAccount() {
+  console.log(chalk.bgGreen.black('Obrigado por escolher o nosso banco!'))
+  console.log(chalk.green('Defina as opções da sua conta a seguir:'))
+}
