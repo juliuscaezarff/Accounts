@@ -26,6 +26,14 @@ function operation() {
 
       if (action === 'Criar Conta') {
         createAccount()
+      } else if(action === 'Depositar') {
+
+      } else if (action === 'Consultar Saldo') {
+
+      }else if(action === 'Sacar') {
+
+      }else if(action === 'Sair') {
+        
       }
     })
     .catch(err => console.log(err))
@@ -61,8 +69,20 @@ function buildAccount() {
         console.log(
           chalk.bgRed.black('Essa conta já existe, escolha outro nome!')
         )
-        buildAccount();
+        buildAccount()
+        return
       }
+
+      fs.writeFile(
+        `accounts/${accountName}.json`,
+        '{"balance": 0}',
+        function (err) {
+          console.log(err)
+        }
+      )
+
+      console.log(chalk.green('Parabéns sua conta foi criada!'))
+      operation()
     })
     .catch(err => console.error(err))
 }
