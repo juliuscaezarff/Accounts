@@ -34,7 +34,7 @@ function operation() {
 
       }else if(action === 'Sair') {
         console.log(chalk.black('Obrigado por usar o Accounts'))
-        
+        process.exit()
       }
     })
     .catch(err => console.log(err))
