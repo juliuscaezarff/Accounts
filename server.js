@@ -89,10 +89,26 @@ function buildAccount() {
 //
 
 function deposit() {
-  inquirer.prompt([
-    {
-      name: 'accountName',
-      message: 'Qual o nome da sua conta?'
-    }
-  ])
+  inquirer
+    .prompt([
+      {
+        name: 'accountName',
+        message: 'Qual o nome da sua conta?'
+      }
+    ])
+    .then(answer => {
+      const accountName = answer['accountName']
+
+      //verify if account exist
+    })
+    .catch()
+}
+
+function checkAccount(accountName) {
+  if (!fs.existsSync(`accounts/${accountName}.json`)) {
+    console.log('Essa conta não existe!')
+    return false
+  }
+
+  return true
 }
