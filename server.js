@@ -33,6 +33,7 @@ function operation() {
       }else if(action === 'Sacar') {
 
       }else if(action === 'Sair') {
+        console.log(chalk.black('Obrigado por usar o Accounts'))
         
       }
     })
