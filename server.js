@@ -26,14 +26,11 @@ function operation() {
 
       if (action === 'Criar Conta') {
         createAccount()
-      } else if(action === 'Depositar') {
+      } else if (action === 'Depositar') {
         deposit()
-
       } else if (action === 'Consultar Saldo') {
-
-      }else if(action === 'Sacar') {
-
-      }else if(action === 'Sair') {
+      } else if (action === 'Sacar') {
+      } else if (action === 'Sair') {
         console.log(chalk.black('Obrigado por usar o Accounts'))
         process.exit()
       }
@@ -91,8 +88,11 @@ function buildAccount() {
 
 //
 
-function desposit() {
-
-  
-
+function deposit() {
+  inquirer.prompt([
+    {
+      name: 'accountName',
+      message: 'Qual o nome da sua conta?'
+    }
+  ])
 }
