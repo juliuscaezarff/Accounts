@@ -27,6 +27,7 @@ function operation() {
       if (action === 'Criar Conta') {
         createAccount()
       } else if(action === 'Depositar') {
+        deposit()
 
       } else if (action === 'Consultar Saldo') {
 
@@ -86,4 +87,12 @@ function buildAccount() {
       operation()
     })
     .catch(err => console.error(err))
+}
+
+//
+
+function desposit() {
+
+  
+
 }
