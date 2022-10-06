@@ -148,9 +148,13 @@ function addAmount(accountName, amount) {
   fs.writeFileSync(
     `accounts/${accountName}.json`,
     JSON.stringify(accountData),
-    function(err) {
+    function (err) {
       console.log(err)
-    },
+    }
+  )
+
+  console.log(
+    chalk.green(`Foi depositado o valor de R${amount} na sua conta!`)
   )
 }
 
