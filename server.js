@@ -2,6 +2,7 @@ import inquirer from 'inquirer'
 import chalk from 'chalk'
 
 import fs from 'fs'
+import { parse } from 'path'
 
 operation()
 
@@ -240,4 +241,6 @@ function removeAmount(accountName, amount) {
     console.log('Valor indisponível!')
     return widthDraw()
   }
+
+  accountData.balance = parseFloat(accountData.balance) - parseFloat(amount)
 }
