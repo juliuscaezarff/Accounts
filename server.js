@@ -100,8 +100,11 @@ function deposit() {
       const accountName = answer['accountName']
 
       //verify if account exist
+      if (!checkAccount(accountName)) {
+        return deposit()
+      }
     })
-    .catch()
+    .catch(err => console.log(err))
 }
 
 function checkAccount(accountName) {
