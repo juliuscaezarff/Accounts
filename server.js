@@ -175,5 +175,5 @@ function getAccountBalance() {
       name: 'accountName',
       message: 'Qual o nome da sua conta?'
     }
-  ])
+  ]).then().catch()
 }
