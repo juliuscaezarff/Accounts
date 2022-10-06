@@ -170,5 +170,10 @@ function getAccount(accountName) {
 
 // show account balance
 function getAccountBalance() {
-  
+  inquirer([
+    {
+      name: 'accountName',
+      message: 'Qual o nome da sua conta?'
+    }
+  ])
 }
