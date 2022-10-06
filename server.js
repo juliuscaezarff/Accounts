@@ -154,9 +154,7 @@ function addAmount(accountName, amount) {
     }
   )
 
-  console.log(
-    chalk.green(`Foi depositado o valor de R${amount} na sua conta!`)
-  )
+  console.log(chalk.green(`Foi depositado o valor de R${amount} na sua conta!`))
 }
 
 function getAccount(accountName) {
@@ -175,5 +173,7 @@ function getAccountBalance() {
       name: 'accountName',
       message: 'Qual o nome da sua conta?'
     }
-  ]).then().catch()
+  ])
+    .then()
+    .catch(err => console.log(err))
 }
