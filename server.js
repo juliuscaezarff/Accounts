@@ -196,6 +196,11 @@ function getAccountBalance() {
 // widthDraw an amount from user account
 function widthDraw() {
 
-  
+  inquirer.prompt([
+    {
+      name: 'accountName',
+      message: 'Qual o nome da sua conta?'
+    }
+  ])
 
 }
