@@ -195,12 +195,49 @@ function getAccountBalance() {
 
 // widthDraw an amount from user account
 function widthDraw() {
+  inquirer
+    .prompt([
+      {
+        name: 'accountName',
+        message: 'Qual o nome da sua conta?'
+      }
+    ])
+    .then(answer => {
+      const accountName = answer['accountName']
 
-  inquirer.prompt([
-    {
-      name: 'accountName',
-      message: 'Qual o nome da sua conta?'
-    }
-  ])
+      if (!checkAccount(accountName)) {
+        return widthDraw()
+      }
 
+      inquirer
+        .prompt([
+          {
+            name: 'amount',
+            message: 'Quanto você deseja sacar?'
+          }
+        ])
+        .then(answer => {
+          const amount = answer['amount']
+
+          removeAmount(accountName, amount)
+        })
+        .catch()
+    })
+    .catch()
+}
+
+function removeAmount(accountName, amount) {
+  const accountData = getAccount(accountName)
+
+  if (!amount) {
+    console.log(
+      chalk.bgRed.black('Ocorreu um erro tente novamente mais tarde!')
+    )
+    return widthDraw()
+  }
+
+  if (accountData.balance < amount) {
+    console.log('Valor indisponível!')
+    return widthDraw()
+  }
 }
