@@ -31,6 +31,7 @@ function operation() {
       } else if (action === 'Consultar Saldo') {
         getAccountBalance()
       } else if (action === 'Sacar') {
+        widthDraw()
       } else if (action === 'Sair') {
         console.log(chalk.black('Obrigado por usar o Accounts'))
         process.exit()
