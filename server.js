@@ -168,12 +168,26 @@ function getAccount(accountName) {
 
 // show account balance
 function getAccountBalance() {
-  inquirer([
-    {
-      name: 'accountName',
-      message: 'Qual o nome da sua conta?'
-    }
-  ])
-    .then()
+  inquirer
+    .prompt([
+      {
+        name: 'accountName',
+        message: 'Qual o nome da sua conta?'
+      }
+    ])
+    .then(answer => {
+      const accountName = answer['accountName']
+
+      // verify if account exists
+      if (!checkAccount(accountName)) {
+        return getAccountBalance()
+      }
+
+      const accountData = getAccount(accountName)
+
+      console.log(`Olá, o slado da sua conta é de R${accountData.balance}`)
+
+      operation()
+    })
     .catch(err => console.log(err))
 }
