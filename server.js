@@ -167,3 +167,8 @@ function getAccount(accountName) {
 
   return JSON.parse(accountJSON)
 }
+
+// show account balance
+function getAccountBalance() {
+  
+}
