@@ -192,3 +192,10 @@ function getAccountBalance() {
     })
     .catch(err => console.log(err))
 }
+
+// widthDraw an amount from user account
+function widthDraw() {
+
+  
+
+}
