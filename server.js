@@ -243,4 +243,15 @@ function removeAmount(accountName, amount) {
   }
 
   accountData.balance = parseFloat(accountData.balance) - parseFloat(amount)
+
+  fs.writeFileSync(
+    `accounts/${accountName}.json`,
+    JSON.stringify(accountData),
+    function(err) {
+      console.log(err)
+    }
+  )
+
+  console.log(`Foi realizado um saque com sucessso de R$${amount} na sua conta!`)
+  operation()
 }
