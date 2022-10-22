@@ -252,7 +252,6 @@ function removeAmount(accountName, amount) {
     }
   )
 
-  //chalk
-  console.log(`Foi realizado um saque com sucessso de R$${amount} na sua conta!`)
+  console.log(chalk.bgGreen.black(`Foi realizado um saque com sucessso de R$${amount} na sua conta!`))
   operation()
 }
