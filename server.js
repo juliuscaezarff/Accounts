@@ -34,7 +34,8 @@ function operation() {
       } else if (action === 'Sacar') {
         widthDraw()
       } else if (action === 'Sair') {
-        console.log(chalk.black('Obrigado por usar o Accounts'))
+        //chalk
+        console.log(chalk.bgBlue.black('Obrigado por usar o Accounts'))
         process.exit()
       }
     })
@@ -129,6 +130,7 @@ function deposit() {
 
 function checkAccount(accountName) {
   if (!fs.existsSync(`accounts/${accountName}.json`)) {
+    // chalk
     console.log('Essa conta não existe!')
     return false
   }
@@ -187,6 +189,7 @@ function getAccountBalance() {
 
       const accountData = getAccount(accountName)
 
+      //chakl
       console.log(`Olá, o slado da sua conta é de R${accountData.balance}`)
 
       operation()
@@ -238,6 +241,7 @@ function removeAmount(accountName, amount) {
   }
 
   if (accountData.balance < amount) {
+    //chalk
     console.log('Valor indisponível!')
     return widthDraw()
   }
@@ -252,6 +256,7 @@ function removeAmount(accountName, amount) {
     }
   )
 
+  //chalk
   console.log(`Foi realizado um saque com sucessso de R$${amount} na sua conta!`)
   operation()
 }
