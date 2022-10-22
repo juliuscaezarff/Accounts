@@ -188,7 +188,7 @@ function getAccountBalance() {
       const accountData = getAccount(accountName)
 
       //chakl
-      console.log(`Olá, o slado da sua conta é de R${accountData.balance}`)
+      console.log(`Olá, o saldo da sua conta é de R${accountData.balance}`)
 
       operation()
     })
