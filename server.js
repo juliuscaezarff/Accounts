@@ -187,7 +187,6 @@ function getAccountBalance() {
 
       const accountData = getAccount(accountName)
 
-      //chakl
       console.log(chalk.bgBlue.black(`Olá, o saldo da sua conta é de R$${accountData.balance}`))
 
       operation()
@@ -239,8 +238,7 @@ function removeAmount(accountName, amount) {
   }
 
   if (accountData.balance < amount) {
-    //chalk
-    console.log('Valor indisponível!')
+    console.log(chalk.bgRed.black('Valor indisponível!'))
     return widthDraw()
   }
 
