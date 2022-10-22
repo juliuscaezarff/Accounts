@@ -34,7 +34,6 @@ function operation() {
       } else if (action === 'Sacar') {
         widthDraw()
       } else if (action === 'Sair') {
-        //chalk
         console.log(chalk.bgBlue.black('Obrigado por usar o Accounts'))
         process.exit()
       }
@@ -130,8 +129,7 @@ function deposit() {
 
 function checkAccount(accountName) {
   if (!fs.existsSync(`accounts/${accountName}.json`)) {
-    // chalk
-    console.log('Essa conta não existe!')
+    console.log(chalk.bgRed.black('Essa conta não existe!'))
     return false
   }
 
