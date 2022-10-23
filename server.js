@@ -2,7 +2,6 @@ import inquirer from 'inquirer'
 import chalk from 'chalk'
 
 import fs from 'fs'
-import { parse } from 'path'
 
 operation()
 
